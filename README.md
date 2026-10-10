@@ -20,3 +20,8 @@ Flagged lists:
 The file extensions and suspicious keywords are defined inside the is_malicious function in antivirusd.sh.
 Flagged extensions: .exe, .bat, .vbs, .scr, .ps1
 Suspicious keywords: virus, trojan, malware, worm, ransomware
+
+Bouns:
+Prerequisites: The antivirus-cron.sh script must exist in the project directory, and the cron service must be running
+Setup:** Run `crontab -e`, choose nano if prompted, and add the required cron entry. Save the file, then run `crontab -l` to verify the entry
+Expression:** `31 0 15-21 * 5` schedules the job at 12:31 AM on Friday between the 15th and 21st, which is always the third Friday of the month.
