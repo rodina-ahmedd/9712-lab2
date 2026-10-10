@@ -9,6 +9,11 @@ ls -l $dir > directory-info.last
 
 is_malicious() {
     f=$1
+    name=$(basename "$f")
+    if grep -q -x "$name" whitelist.txt
+    then 
+       return 1
+    fi
     ext="${f##*.}"
     for bad in exe bat vbs scr ps1
     do

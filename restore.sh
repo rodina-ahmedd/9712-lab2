@@ -34,7 +34,8 @@ read option
 if [ "$option" = "1" ]
 then
     mv "$2/$selected" "$1"
-    echo "Restored $selected to $1."
+    echo "Restored $selected to $1." 
+    echo "$selected" >> whitelist.txt
 fi
 if [ "$option" = "2" ]
 then 
